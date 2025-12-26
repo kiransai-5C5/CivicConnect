@@ -1,0 +1,1199 @@
+/* Officer Petitions - Professional Styles */
+
+.officer-petitions-wrapper {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.officer-petitions-container {
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Header Section */
+.officer-petitions-header {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.create-petition-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.create-petition-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+/* Tabs Section */
+.officer-petitions-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  background-color: #1e40af;
+  border-radius: 10px;
+  padding: 6px;
+  width: fit-content;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.tab-btn {
+  padding: 10px 24px;
+  background-color: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+.tab-btn.active {
+  background-color: #1e40af;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+/* Filters Section */
+.officer-petitions-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  min-width: 180px;
+}
+
+.filter-item:hover {
+  border-color: #1e40af;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.1);
+  transform: translateY(-1px);
+}
+
+.filter-icon {
+  color: #1e40af;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.filter-select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #1e40af;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  flex: 1;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e40af' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 18px;
+}
+
+.filter-select option {
+  background-color: #2d4a9e;
+  color: white;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  line-height: 1.6;
+}
+
+.filter-select option:hover {
+  background-color: #3558b8;
+  color: white;
+}
+
+.filter-select option:checked {
+  background-color: #1e40af;
+  font-weight: 600;
+  color: white;
+}
+
+.filter-select option:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.filter-select option:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Petitions Grid */
+.officer-petitions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Petition Card */
+.officer-petition-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.officer-petition-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.officer-petition-card:hover::before {
+  opacity: 1;
+}
+
+.officer-petition-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+}
+
+.officer-petition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.petition-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+
+.meta-category {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.meta-separator {
+  color: #cbd5e1;
+}
+
+.meta-location {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.officer-petition-title {
+  font-size: 18px;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.officer-petition-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 18px 0;
+  flex: 1;
+}
+
+/* Progress Bar */
+.officer-petition-progress {
+  margin-bottom: 18px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.progress-percentage {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+/* Response Preview */
+.officer-response-preview {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border-left: 3px solid #1e40af;
+}
+
+.response-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.response-text {
+  font-size: 13px;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Action Buttons */
+.officer-petition-actions {
+  margin-bottom: 14px;
+}
+
+.write-response-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.write-response-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+/* Status Actions */
+.officer-status-actions {
+  padding: 14px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+.status-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.status-btn {
+  flex: 1;
+  padding: 9px;
+  border: 2px solid #e2e8f0;
+  background-color: white;
+  color: #64748b;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-btn:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.status-btn.review {
+  border-color: #fbbf24;
+  color: #f59e0b;
+}
+
+.status-btn.review:hover,
+.status-btn.review.active {
+  background-color: #fef3c7;
+  border-color: #f59e0b;
+}
+
+.status-btn.success {
+  border-color: #60a5fa;
+  color: #3b82f6;
+}
+
+.status-btn.success:hover,
+.status-btn.success.active {
+  background-color: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.status-btn.close {
+  border-color: #9ca3af;
+  color: #6b7280;
+}
+
+.status-btn.close:hover,
+.status-btn.close.active {
+  background-color: #f3f4f6;
+  border-color: #6b7280;
+}
+
+.status-btn.active {
+  font-weight: 700;
+}
+
+.officer-petition-footer {
+  text-align: center;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.footer-text {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: white;
+  border-radius: 12px;
+  border: 2px dashed #e2e8f0;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-size: 24px;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.empty-text {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f1f5f9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  color: #64748b;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background-color: #e2e8f0;
+  transform: rotate(90deg);
+  color: #1e293b;
+}
+
+/* Response Modal */
+.response-modal {
+  padding: 0;
+}
+
+.response-modal-header {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  padding: 28px 32px;
+  position: relative;
+}
+
+.modal-title {
+  color: white;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.response-modal-body {
+  padding: 28px 32px 32px;
+}
+
+.petition-info-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 3px solid #1e40af;
+}
+
+.petition-info-title {
+  font-size: 16px;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.petition-info-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #64748b;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: #f8fafc;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #1e40af;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.form-textarea,
+.response-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: #f8fafc;
+  resize: vertical;
+  min-height: 180px;
+  line-height: 1.7;
+}
+
+.form-textarea:focus,
+.response-textarea:focus {
+  outline: none;
+  border-color: #1e40af;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.textarea-counter {
+  text-align: right;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 6px;
+}
+
+.response-modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.response-cancel-btn {
+  flex: 1;
+  padding: 13px;
+  background-color: white;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.response-cancel-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.response-submit-btn {
+  flex: 1.5;
+  padding: 13px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(30, 64, 175, 0.4);
+}
+
+.response-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(30, 64, 175, 0.5);
+}
+
+.response-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status Modal */
+.status-modal {
+  padding: 0;
+  max-width: 520px;
+}
+
+.status-modal-icon {
+  width: 100%;
+  padding: 50px 40px 35px;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: #1e40af;
+  position: relative;
+}
+
+.status-modal-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+}
+
+.status-modal-icon svg {
+  filter: drop-shadow(0 6px 12px rgba(30, 64, 175, 0.4));
+  animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.status-modal-title {
+  font-size: 24px;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 700;
+  padding: 24px 32px 14px;
+  text-align: center;
+}
+
+.status-modal-text {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 32px 24px;
+  text-align: center;
+}
+
+.status-modal-text strong {
+  color: #1e293b;
+  font-weight: 700;
+  display: block;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.status-highlight {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.status-highlight.under-review {
+  background-color: #fef3c7;
+  color: #f59e0b;
+}
+
+.status-highlight.success {
+  background-color: #dbeafe;
+  color: #3b82f6;
+}
+
+.status-highlight.closed {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.status-info-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 20px 32px;
+  margin: 0;
+}
+
+.status-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.status-info-item:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.status-info-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.status-info-value {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 700;
+  background-color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.status-modal-actions {
+  display: flex;
+  gap: 12px;
+  padding: 24px 32px 32px;
+}
+
+.status-cancel-btn {
+  flex: 1;
+  padding: 13px;
+  background-color: white;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-cancel-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.status-confirm-btn {
+  flex: 1.2;
+  padding: 13px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(30, 64, 175, 0.4);
+}
+
+.status-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(30, 64, 175, 0.5);
+}
+
+/* Create Modal */
+.create-modal {
+  max-width: 650px;
+}
+
+.create-modal-header {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  padding: 28px 32px;
+  position: relative;
+}
+
+.create-modal-body {
+  padding: 28px 32px 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.create-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(30, 64, 175, 0.4);
+  margin-top: 8px;
+}
+
+.create-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(30, 64, 175, 0.5);
+}
+
+.create-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Detail Modal Specific Styles */
+.detail-modal {
+  padding: 40px;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.modal-status-badge {
+  font-size: 12px;
+  padding: 8px 16px;
+}
+
+.modal-category-badge,
+.modal-location-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.modal-category-badge {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.modal-location-badge {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.modal-description {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.modal-meta-info {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+  padding: 18px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  flex-wrap: wrap;
+}
+
+.meta-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.meta-icon {
+  color: #1e40af;
+  font-size: 16px;
+}
+
+.meta-info-item strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.modal-response-section {
+  margin-bottom: 28px;
+  padding: 20px;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 12px;
+  border-left: 4px solid #1e40af;
+}
+
+.modal-response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.modal-response-header h3 {
+  font-size: 16px;
+  color: #1e40af;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.response-date {
+  font-size: 12px;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.modal-response-content {
+  color: #1e293b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.modal-progress {
+  margin-bottom: 28px;
+}
+
+.modal-progress .progress-info {
+  margin-bottom: 12px;
+}
+
+.progress-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.modal-percentage {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal-progress-bar {
+  height: 12px;
+}
+
+.modal-actions {
+  margin-bottom: 20px;
+}
+
+.modal-action-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-action-btn.write-response {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.modal-action-btn.write-response:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
+}
+
+.modal-status-actions {
+  padding: 18px;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .officer-petitions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .officer-petitions-wrapper {
+    padding: 16px;
+  }
+
+  .officer-petitions-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-petition-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .officer-petitions-tabs {
+    width: 100%;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .officer-petitions-filters {
+    flex-direction: column;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .officer-petitions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-buttons {
+    flex-direction: column;
+  }
+
+  .modal-container {
+    margin: 10px;
+  }
+
+  .detail-modal {
+    padding: 28px 24px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    margin-right: 40px;
+  }
+
+  .modal-meta-info {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .response-modal-header,
+  .response-modal-body,
+  .create-modal-header,
+  .create-modal-body {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 22px;
+  }
+
+  .officer-petition-card {
+    padding: 18px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+}

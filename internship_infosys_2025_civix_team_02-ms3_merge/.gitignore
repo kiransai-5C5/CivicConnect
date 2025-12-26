@@ -1,0 +1,83 @@
+
+.DS_Store
+Thumbs.db
+
+
+.env
+.env.*.local
+*.env
+
+
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+<<<<<<< HEAD
+
+=======
+# cache
+>>>>>>> 2a8de55a33b1e4b42b6ac57eb08fef1c68f7f5ff
+.npm/
+.yarn/
+.pnpm-store/
+frontend/node_modules/.cache/
+backend/node_modules/.cache/
+
+<<<<<<< HEAD
+
+=======
+# logs
+>>>>>>> 2a8de55a33b1e4b42b6ac57eb08fef1c68f7f5ff
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+dist/
+build/
+.next/
+.out/
+.cache/
+
+
+*.eslintcache
+
+
+dist/
+out/
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a8de55a33b1e4b42b6ac57eb08fef1c68f7f5ff
+pids
+*.pid
+*.seed
+*.pid.lock
+
+
+coverage/
+*.lcov
+
+
+.vscode/
+.idea/
+*.iml
+
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a8de55a33b1e4b42b6ac57eb08fef1c68f7f5ff
+*.tmp
+*.temp
+*.local
+*.bak
+*.orig
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2a8de55a33b1e4b42b6ac57eb08fef1c68f7f5ff

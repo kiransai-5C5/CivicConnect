@@ -1,0 +1,1498 @@
+/* Officer Polls Page - Professional Styling */
+
+.officer-polls-wrapper {
+  background-color: #f5f7fa;
+  min-height: 100%;
+  padding: 0;
+}
+
+.officer-polls-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.officer-polls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.officer-header-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.officer-header-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+  font-weight: 400;
+}
+
+.officer-create-poll-btn {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.officer-create-poll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+/* Tabs Section */
+.officer-polls-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  background-color: #1e40af;
+  border-radius: 10px;
+  padding: 4px;
+  width: fit-content;
+}
+
+.officer-tab-btn {
+  padding: 12px 32px;
+  background-color: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.officer-tab-btn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.officer-tab-btn.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+}
+
+/* Filters Section */
+.officer-polls-filters {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.officer-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  min-width: 200px;
+}
+
+.officer-filter-item:hover {
+  border-color: #1e40af;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+  transform: translateY(-2px);
+}
+
+.officer-filter-icon {
+  color: #1e40af;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.officer-filter-select {
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  color: #1e293b;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  flex: 1;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e40af' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 20px;
+}
+
+.officer-filter-select option {
+  background-color: white;
+  color: #1e293b;
+  padding: 10px;
+}
+
+/* Polls List */
+.officer-polls-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Poll Item */
+.officer-poll-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.officer-poll-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.officer-poll-item:hover::before {
+  opacity: 1;
+}
+
+.officer-poll-item:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.officer-poll-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.officer-poll-item-info {
+  flex: 1;
+}
+
+.officer-poll-status-badge-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.officer-poll-item-question {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.officer-poll-status-badge {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.officer-poll-status-badge.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.officer-poll-status-badge.status-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.officer-poll-status-badge.status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.officer-poll-item-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.officer-meta-item {
+  font-size: 13px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.officer-meta-item strong {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.officer-meta-item svg {
+  color: #1e40af;
+  font-size: 14px;
+}
+
+.officer-official-creator-badge {
+  padding: 3px 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+}
+
+.officer-poll-item-stats {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.officer-poll-votes-count {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.officer-poll-closes-in {
+  font-size: 13px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.officer-poll-closed-date {
+  font-size: 13px;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Poll Results */
+.officer-poll-results {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+  margin-bottom: 24px;
+}
+
+.officer-results-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+}
+
+.officer-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.officer-result-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.officer-result-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.officer-result-label {
+  font-size: 15px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.officer-result-percentage {
+  font-size: 14px;
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.officer-result-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.officer-result-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+/* Official Action Section */
+.officer-action-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.officer-action-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.officer-action-icon {
+  font-size: 28px;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.officer-action-text h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #065f46;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.officer-action-text p {
+  font-size: 14px;
+  color: #166534;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.officer-action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.officer-approve-btn {
+  flex: 1;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.officer-approve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.officer-reject-btn {
+  flex: 1;
+  padding: 14px 24px;
+  background: white;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.officer-reject-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+/* Comments Section */
+.officer-comments-section {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
+}
+
+.officer-comments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.officer-comments-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.officer-comment-icon {
+  color: #1e40af;
+  font-size: 16px;
+}
+
+.officer-comments-count {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.officer-no-comments {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+.officer-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.officer-comment-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.officer-comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background-color: #f8fafc;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.officer-comment-item:hover {
+  background-color: #f1f5f9;
+}
+
+.officer-comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.officer-comment-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.officer-comment-author-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.officer-comment-author {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.officer-comment-time {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.officer-comment-text {
+  font-size: 14px;
+  color: #475569;
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.officer-comment-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.officer-comment-reply-btn,
+.officer-comment-delete-btn {
+  padding: 7px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.officer-comment-reply-btn {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.officer-comment-reply-btn:hover {
+  background-color: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.officer-comment-delete-btn {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.officer-comment-delete-btn:hover {
+  background-color: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* Reply Form */
+.officer-reply-form {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: white;
+  border: 2px solid #1e40af;
+  border-radius: 10px;
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+}
+
+.officer-reply-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.officer-reply-textarea:focus {
+  outline: none;
+  border-color: #1e40af;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+.officer-reply-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.officer-cancel-reply-btn,
+.officer-submit-reply-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.officer-cancel-reply-btn {
+  background-color: white;
+  color: #64748b;
+  border: 2px solid #cbd5e1;
+}
+
+.officer-cancel-reply-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.officer-submit-reply-btn {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.officer-submit-reply-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
+}
+
+/* Replies List */
+.officer-replies-list {
+  margin-top: 16px;
+  padding-left: 20px;
+  border-left: 3px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.officer-reply-item {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.officer-reply-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.officer-reply-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.officer-reply-author-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.officer-reply-author {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.official-badge {
+  padding: 2px 8px;
+  background-color: #10b981;
+  color: white;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.officer-reply-time {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.officer-reply-text {
+  font-size: 13px;
+  color: #475569;
+  margin: 0 0 10px 0;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.officer-delete-reply-btn {
+  padding: 5px 12px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.officer-delete-reply-btn:hover {
+  background-color: #fecaca;
+  transform: translateY(-1px);
+}
+
+.officer-toggle-comments-btn {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin: 8px auto 0;
+  display: block;
+}
+
+.officer-toggle-comments-btn:hover {
+  background-color: #dbeafe;
+  transform: translateY(-2px);
+}
+
+/* Empty State */
+.officer-empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: white;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+}
+
+.officer-empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.officer-empty-title {
+  font-size: 24px;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.officer-empty-text {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Modal Styles */
+.officer-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+  animation: officerFadeIn 0.3s ease;
+}
+
+@keyframes officerFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.officer-modal-container {
+  background-color: white;
+  border-radius: 20px;
+  max-width: 550px;
+  width: 100%;
+  position: relative;
+  animation: officerSlideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+@keyframes officerSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.officer-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  color: #64748b;
+  z-index: 10;
+}
+
+.officer-modal-close-btn:hover {
+  background-color: white;
+  transform: rotate(90deg);
+  color: #1e293b;
+}
+
+.officer-modal-title {
+  font-size: 26px;
+  color: #1e293b;
+  margin: 0;
+  font-weight: 700;
+  padding: 28px 40px 16px;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.officer-modal-text {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 40px 28px;
+  text-align: center;
+}
+
+.officer-modal-text strong {
+  color: #1e293b;
+  font-weight: 700;
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Approve Modal */
+.officer-approve-modal-icon {
+  width: 100%;
+  padding: 50px 40px 35px;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: #10b981;
+  position: relative;
+}
+
+.officer-approve-modal-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+}
+
+.officer-approve-modal-icon svg {
+  filter: drop-shadow(0 6px 12px rgba(16, 185, 129, 0.4));
+  animation: approvePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes approvePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Reject Modal */
+.officer-reject-modal-icon {
+  width: 100%;
+  padding: 50px 40px 35px;
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: #dc2626;
+  position: relative;
+}
+
+.officer-reject-modal-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+}
+
+.officer-reject-modal-icon svg {
+  filter: drop-shadow(0 6px 12px rgba(220, 38, 38, 0.4));
+  animation: rejectPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rejectPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Delete Modal */
+.officer-delete-modal-icon {
+  width: 100%;
+  padding: 50px 40px 35px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: #f59e0b;
+  position: relative;
+}
+
+.officer-delete-modal-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+}
+
+.officer-delete-modal-icon svg {
+  filter: drop-shadow(0 6px 12px rgba(245, 158, 11, 0.4));
+  animation: warningPulse 2s ease-in-out infinite;
+}
+
+@keyframes warningPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Modal Info */
+.officer-modal-info {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 24px 40px;
+  border-top: 2px solid #bae6fd;
+  border-bottom: 2px solid #bae6fd;
+}
+
+.officer-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.officer-info-item:not(:last-child) {
+  border-bottom: 1px dashed #7dd3fc;
+}
+
+.officer-info-label {
+  font-size: 14px;
+  color: #0c4a6e;
+  font-weight: 600;
+}
+
+.officer-info-value {
+  font-size: 15px;
+  color: #075985;
+  font-weight: 700;
+  background-color: white;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: 2px solid #7dd3fc;
+  box-shadow: 0 2px 4px rgba(14, 165, 233, 0.1);
+}
+
+/* Modal Actions */
+.officer-modal-actions {
+  display: flex;
+  gap: 14px;
+  padding: 28px 40px 36px;
+  background-color: white;
+}
+
+.officer-modal-cancel-btn {
+  flex: 1;
+  padding: 15px;
+  background-color: white;
+  color: #64748b;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.officer-modal-cancel-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #475569;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.officer-modal-approve-btn {
+  flex: 1.2;
+  padding: 15px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.5);
+}
+
+.officer-modal-approve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.6);
+}
+
+.officer-modal-reject-btn {
+  flex: 1.2;
+  padding: 15px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.5);
+}
+
+.officer-modal-reject-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(220, 38, 38, 0.6);
+}
+
+.officer-modal-delete-btn {
+  flex: 1.2;
+  padding: 15px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5);
+}
+
+.officer-modal-delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.6);
+}
+
+/* Create Poll Modal */
+.officer-create-poll-modal {
+  padding: 0;
+  max-width: 750px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.officer-create-modal-header {
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  padding: 28px 40px;
+  position: relative;
+}
+
+.officer-create-modal-header .officer-modal-title {
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.officer-create-close-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.officer-create-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.officer-create-modal-body {
+  padding: 32px 40px 40px;
+}
+
+.officer-form-group {
+  margin-bottom: 20px;
+}
+
+.officer-form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.officer-char-count {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.officer-form-input,
+.officer-form-textarea,
+.officer-form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: #f8fafc;
+}
+
+.officer-form-input.error,
+.officer-form-textarea.error,
+.officer-form-select.error {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.officer-error-message {
+  display: block;
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.officer-form-input:focus,
+.officer-form-textarea:focus,
+.officer-form-select:focus {
+  outline: none;
+  border-color: #1e40af;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(30, 64, 175, 0.1);
+}
+
+.officer-form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.6;
+}
+
+.officer-form-row-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.officer-date-input {
+  cursor: pointer;
+}
+
+.officer-date-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.officer-date-input::-webkit-calendar-picker-indicator:hover {
+  background-color: #dbeafe;
+}
+
+.officer-option-input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.officer-option-input {
+  flex: 1;
+}
+
+.officer-remove-option-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background-color: #fee2e2;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.officer-remove-option-btn:hover {
+  background-color: #dc2626;
+  color: white;
+}
+
+.officer-add-option-btn {
+  padding: 12px 20px;
+  background-color: #f1f5f9;
+  color: #1e40af;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.officer-add-option-btn:hover {
+  background-color: #dbeafe;
+  border-color: #1e40af;
+}
+
+.officer-create-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.officer-create-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+}
+
+/* Scrollbar */
+.officer-polls-wrapper::-webkit-scrollbar,
+.officer-modal-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.officer-polls-wrapper::-webkit-scrollbar-track,
+.officer-modal-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.officer-polls-wrapper::-webkit-scrollbar-thumb,
+.officer-modal-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.officer-polls-wrapper::-webkit-scrollbar-thumb:hover,
+.officer-modal-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .officer-polls-wrapper {
+    padding: 0;
+  }
+
+  .officer-polls-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .officer-header-content h1 {
+    font-size: 26px;
+  }
+
+  .officer-polls-tabs {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .officer-tab-btn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .officer-poll-item {
+    padding: 20px;
+  }
+
+  .officer-poll-item-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .officer-poll-item-stats {
+    align-items: flex-start;
+  }
+
+  .officer-action-section {
+    padding: 20px;
+  }
+
+  .officer-action-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .officer-action-buttons {
+    flex-direction: column;
+  }
+
+  .officer-modal-container {
+    margin: 10px;
+  }
+
+  .officer-modal-title {
+    font-size: 22px;
+    padding: 24px 24px 12px;
+  }
+
+  .officer-modal-text {
+    padding: 0 24px 20px;
+  }
+
+  .officer-modal-info {
+    padding: 20px 24px;
+  }
+
+  .officer-modal-actions {
+    padding: 20px 24px 28px;
+    flex-direction: column;
+  }
+
+  .officer-comment-item {
+    padding: 12px;
+  }
+
+  .officer-comment-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .officer-comment-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .officer-comment-reply-btn,
+  .officer-comment-delete-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .officer-reply-actions {
+    flex-direction: column;
+  }
+
+  .officer-cancel-reply-btn,
+  .officer-submit-reply-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .officer-header-content h1 {
+    font-size: 22px;
+  }
+
+  .officer-tab-btn {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  .officer-poll-item {
+    padding: 16px;
+  }
+
+  .officer-poll-item-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .officer-poll-status-badge-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .officer-replies-list {
+    padding-left: 12px;
+  }
+
+  .officer-reply-item {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,792 @@
+/* frontend/src/pages/Dashboard/OfficialDashboard.css */
+
+.official-dashboard-container {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navbar - Updated to match Citizen Dashboard */
+.official-top-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: white;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.official-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 90px;
+  height: 50px;
+  object-fit: contain;
+  background: transparent;
+  mix-blend-mode: normal;
+}
+
+.official-navbar-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.official-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.official-navbar-bell {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.official-navbar-bell:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  border: 2px solid #1e3a8a;
+}
+
+.official-navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.official-navbar-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.official-navbar-avatar:hover {
+  transform: scale(1.05);
+}
+
+.official-navbar-logout {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.official-navbar-logout:hover {
+  background-color: #b91c1c;
+}
+
+/* Main Layout */
+.official-main-layout {
+  display: flex;
+  padding-top: 64px;
+  min-height: 100vh;
+}
+
+/* Sidebar - Updated to match Citizen Dashboard */
+.official-sidebar {
+  width: 240px;
+  background-color: #ffffff;
+  min-height: calc(100vh - 64px);
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.03);
+}
+
+.official-user-card {
+  padding: 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.official-user-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 auto 12px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.official-user-info h3 {
+  font-size: 16px;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.official-badge {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1e40af;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.official-user-location {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.official-sidebar-nav {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.official-sidebar-nav button {
+  padding: 12px 16px;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 14px;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.official-sidebar-nav button:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.official-sidebar-nav button.active {
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.official-sidebar-nav button svg {
+  font-size: 18px;
+}
+
+.official-sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.official-help-btn {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.official-help-btn:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Main Content */
+.official-main-content {
+  margin-left: 240px;
+  flex: 1;
+  padding: 32px;
+  background-color: #f5f7fa;
+}
+
+.official-header {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  padding: 32px;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25);
+}
+
+.official-header h1 {
+  font-size: 32px;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.official-subtitle {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* Stats Grid */
+.official-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.official-stat-card {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.official-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.official-stat-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.official-stat-icon.blue {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+}
+
+.official-stat-icon.orange {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+}
+
+.official-stat-icon.purple {
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+}
+
+.official-stat-icon.green {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+.official-stat-details h4 {
+  font-size: 11px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.official-stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 4px 0;
+  line-height: 1;
+}
+
+.official-stat-label {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Two Column Layout */
+.official-two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.official-section {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.official-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.official-section-header h2 {
+  font-size: 18px;
+  color: #1f2937;
+  margin: 0;
+  font-weight: 700;
+}
+
+.official-view-all {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.official-view-all:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Petition List */
+.official-petition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.official-petition-item {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.official-petition-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.official-petition-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.official-petition-category.infrastructure {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.official-petition-category.education {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.official-petition-title {
+  font-size: 16px;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.official-petition-desc {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.official-petition-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.official-petition-signatures,
+.official-petition-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.official-review-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.official-review-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Right Column */
+.official-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* AI Report */
+.official-ai-report {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  padding: 24px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25);
+}
+
+.official-ai-icon {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 16px;
+}
+
+.official-ai-report h3 {
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.official-ai-report p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.official-generate-btn {
+  width: 100%;
+  background-color: white;
+  color: #1e3a8a;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.official-generate-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+/* Quick Actions */
+.official-quick-actions {
+  background-color: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.official-quick-actions h3 {
+  font-size: 16px;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+}
+
+.official-action-btn {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.official-action-btn:last-child {
+  margin-bottom: 0;
+}
+
+.official-action-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #1f2937;
+}
+
+/* Poll Preview List */
+.official-poll-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.official-poll-preview-item {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.official-poll-preview-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.official-poll-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.official-poll-category {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.official-poll-category.transportation {
+  background-color: #f0f9ff;
+  color: #0369a1;
+}
+
+.official-poll-category.public-works {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.official-poll-status {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.official-poll-status.active {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.official-poll-preview-title {
+  font-size: 16px;
+  color: #1f2937;
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.official-poll-preview-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.official-poll-votes,
+.official-poll-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+/* Coming Soon Pages */
+.coming-soon-wrapper {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  padding: 80px 40px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 2px solid #e2e8f0;
+}
+
+.coming-soon-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.coming-soon-wrapper h2 {
+  font-size: 28px;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.coming-soon-wrapper p {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .official-two-column {
+    grid-template-columns: 1fr;
+  }
+  
+  .official-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .official-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .official-dashboard-container {
+    padding-top: 64px;
+  }
+
+  .official-sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+    top: 0;
+  }
+
+  .official-main-content {
+    margin-left: 0;
+  }
+
+  .official-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .official-main-content {
+    padding: 20px;
+  }
+
+  .official-header {
+    padding: 24px;
+  }
+
+  .official-header h1 {
+    font-size: 24px;
+  }
+
+  .official-section {
+    padding: 20px;
+  }
+
+  .official-top-navbar {
+    padding: 0 16px;
+  }
+
+  .official-navbar-title {
+    font-size: 22px;
+  }
+}
