@@ -87,7 +87,7 @@ const Polls = () => {
       setLoading(false);
     }
   };
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
   loadPolls();
 }, [activeTab, filters, loadPolls]);
