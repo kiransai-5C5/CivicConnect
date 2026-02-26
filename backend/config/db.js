@@ -1,20 +1,16 @@
 // backend/config/db.js
-const mongoose = require('mongoose');
-const { MongoMemoryServer } = require('mongodb-memory-server');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    const mongoServer = await MongoMemoryServer.create();
-    const uri = mongoServer.getUri();
-
-    await mongoose.connect(uri, {
+    await mongoose.connect("mongodb://127.0.0.1:27017/civix", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
 
-    console.log('MongoDB In-Memory Connected Successfully');
-  } catch (err) {
-    console.error('MongoDB Connection Error:', err.message);
+    console.log("✅ Local MongoDB Connected");
+  } catch (error) {
+    console.error("❌ MongoDB Connection Error:", error.message);
     process.exit(1);
   }
 };
