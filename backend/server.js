@@ -9,7 +9,7 @@ const pollRoutes = require("./routes/pollRoutes");
 connectDB(); // now MONGO_URI is loaded
 
 const app = express();
-
+console.log('MONGO_URI:', process.env.MONGO_URI);
 app.use(cors());
 app.use(express.json());
 
