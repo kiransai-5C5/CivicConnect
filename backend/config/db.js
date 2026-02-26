@@ -1,15 +1,11 @@
 // backend/config/db.js
-const mongoose = require('mongoose');
+// backend/config/db.js
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('MongoDB Connected Successfully');
+    console.log("✅ Fake DB Connected (No Real Database Required)");
   } catch (error) {
-    console.error('MongoDB Connection Error:', error.message);
+    console.error(error);
     process.exit(1);
   }
 };
