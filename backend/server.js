@@ -1,14 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const pollRoutes = require("./routes/pollRoutes");
+// server.js
 
-
-
-
-dotenv.config();
-connectDB();
+connectDB(); // now MONGO_URI is loaded
 
 const app = express();
 
